@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>StudyBuddy | AI Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">✦</div>
+        <div><strong>StudyBuddy</strong><span>AI assistant</span></div>
+      </div>
+      <button class="new-chat" id="newChatBtn" type="button"><span>＋</span> New chat</button>
+      <div class="side-note">
+        <span class="online-dot"></span>
+        <div><strong>Ready to help</strong><small>Ask anything to get started</small></div>
+      </div>
+      <div class="sidebar-footer">Made with Flask + Gemini AI</div>
+    </aside>
+
+    <section class="chat-panel">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">YOUR AI ASSISTANT</div>
+          <h1>How can I help you today?</h1>
+        </div>
+        <div class="status-pill"><span></span> AI assistant</div>
+      </header>
+
+      <section class="conversation" id="conversation" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon">✦</div>
+          <h2>Start a conversation</h2>
+          <p>Ask a question, learn something new, or get help with an idea.</p>
+          <div class="suggestions">
+            <button class="suggestion" type="button" data-prompt="Explain artificial intelligence in simple words.">💡 <span>Explain AI simply</span></button>
+            <button class="suggestion" type="button" data-prompt="Give me 5 tips to prepare for an exam.">📚 <span>Study tips</span></button>
+            <button class="suggestion" type="button" data-prompt="Write a short introduction about me for a presentation.">✍️ <span>Help me write</span></button>
+            <button class="suggestion" type="button" data-prompt="What are some beginner-friendly Python project ideas?">🐍 <span>Python project ideas</span></button>
+          </div>
+        </div>
+      </section>
+
+      <div class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" maxlength="6000" placeholder="Message StudyBuddy..." aria-label="Type your message"></textarea>
+          <button class="send-btn" id="sendBtn" type="submit" aria-label="Send message">↑</button>
+        </form>
+        <p class="disclaimer">AI can make mistakes. Check important information.</p>
+      </div>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
