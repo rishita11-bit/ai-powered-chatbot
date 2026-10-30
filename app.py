@@ -6,7 +6,7 @@ from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
 
 GEMINI_URL = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
@@ -18,6 +18,7 @@ SYSTEM_INSTRUCTION = (
     "Explain concepts clearly and simply. Be polite, accurate, "
     "and concise. If you are unsure, say so."
 )
+
 
 @app.route("/")
 def home():
